@@ -1,34 +1,35 @@
 import React from 'react'
 import './App.css'
-import {ExpenseItem} from "./components/ExpenseItem";
+import {Expenses} from "./components/Expenses/Expenses";
 
 function App(): JSX.Element {
+    const nDate = new Date();
+
     const expenses = [
         {
             id: 'e1',
             title: 'toiler paper',
             amount: Math.floor(Math.random() * 100),
-            date: new Date().toDateString()
+            date: nDate
         },
         {
             id: 'e2',
             title: 'Car insurance',
             amount: Math.floor(Math.random() * 100),
-            date: new Date().toDateString()
+            date: nDate
         },
         {
             id: 'e3',
             title: 'variety',
             amount: Math.floor(Math.random() * 100),
-            date: new Date().toDateString()
+            date: nDate
         }
     ]
 
     return (
         <div className="App">
-            <p>this is also visible</p>
-            <ExpenseItem expenseAmount={expenses[0].amount} expenseDate={expenses[0].date}
-                         expenseTitle={expenses[0].title}/>
+            <p>Expenses</p>
+            <Expenses expenses={expenses}/>
         </div>
     );
 }
